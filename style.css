@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*:focus { outline: 0; }
+
+*::before, *::after { box-sizing: inherit; }
+
+html, body { height: 100%; }
+
+body {
+  font-family: 'Helvetica', sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: rgba(87,160,212,.2);
+}
+
+a, a:hover { text-decoration: none; }
+
+.wrap {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+
+.container-dropdown {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+  margin: 0 auto;
+}
+
+.dropdown:hover .dropdown-button {
+  background-color: rgba(87,160,212,.8);
+  transition: background-color .2s ease;
+}
+
+.dropdown-button {
+  background-color: #57a0d4;
+  color: #fff;
+  border: none;
+  font-size: 1rem;
+  line-height: 1.4;
+  padding: 7px 8px;
+  z-index: 2;
+  pointer-events: none;
+  transition: background-color .2s;
+  font-weight: 300;
+}
+
+input[type="checkbox"] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 30px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 1;
+}
+
+input[type="checkbox"]:checked ~ ul {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate3d(0,0,0);
+  -webkit-transform: translate3d(0,0,0);
+  transition: transform .4s ease-in-out, opacity .4s;
+  -webkit-transition: -webkit-transform .4s ease-in-out, opacity .4s;
+}
+
+.dropdown ul {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+  transform: translate3d(0,40px,0);
+  -webkit-transform: translate3d(0,40px,0);
+  transition: transform .4s ease-in-out, opacity .4s;
+  -webkit-transition: -webkit-transform .4s ease-in-out, opacity .4s;
+}
+
+.dropdown ul li { list-style: none; }
+
+.dropdown ul li a {
+  color: rgba(87,160,212,1);
+  background-color: #fff;
+  display: block;
+  cursor: poiter;
+  padding: 5px 10px;
+  transition: background-color .4s;
+  text-align: left;
+  font-weight: 300;
+  transition: color .4s ease-in-out, background-color .4s ease-in-out;
+}
+
+.dropdown ul li a:hover {
+  background-color: rgba(87,160,212,.8);
+  color: #fff;
+  transition: color .4s ease-in-out, background-color .4s ease-in-out;
+}
