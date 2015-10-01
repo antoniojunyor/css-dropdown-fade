@@ -43,6 +43,11 @@ a, a:hover { text-decoration: none; }
   transition: background-color .2s ease;
 }
 
+.dropdown:active .dropdown-button {
+  background-color: rgba(87,160,212,.5);
+  transition: background-color .2s ease;
+}
+
 .dropdown-button {
   background-color: #57a0d4;
   color: #fff;
