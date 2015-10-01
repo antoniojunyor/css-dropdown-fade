@@ -70,10 +70,6 @@ input[type="checkbox"] {
 input[type="checkbox"]:checked ~ ul {
   opacity: 1;
   pointer-events: auto;
-  transform: translate3d(0,0,0);
-  -webkit-transform: translate3d(0,0,0);
-  transition: transform .4s ease-in-out, opacity .4s;
-  -webkit-transition: -webkit-transform .4s ease-in-out, opacity .4s;
 }
 
 .dropdown ul {
@@ -82,10 +78,6 @@ input[type="checkbox"]:checked ~ ul {
   opacity: 0;
   pointer-events: none;
   z-index: 1;
-  transform: translate3d(0,40px,0);
-  -webkit-transform: translate3d(0,40px,0);
-  transition: transform .4s ease-in-out, opacity .4s;
-  -webkit-transition: -webkit-transform .4s ease-in-out, opacity .4s;
 }
 
 .dropdown ul li { list-style: none; }
@@ -106,4 +98,45 @@ input[type="checkbox"]:checked ~ ul {
   background-color: rgba(87,160,212,.8);
   color: #fff;
   transition: color .4s ease-in-out, background-color .4s ease-in-out;
+}
+
+.dropdown + .dropdown { margin-left: 100px; }
+
+.animation-1 input[type="checkbox"]:checked ~ ul {
+  transform: translate3d(0,0,0);
+  -webkit-transform: translate3d(0,0,0);
+  transition: transform .4s ease-in-out, opacity .4s;
+  -webkit-transition: -webkit-transform .4s ease-in-out, opacity .4s;
+}
+
+.animation-1 ul {
+  transform: translate3d(0,40px,0);
+  -webkit-transform: translate3d(0,40px,0);
+  transition: transform .4s ease-in-out, opacity .4s;
+  -webkit-transition: -webkit-transform .4s ease-in-out, opacity .4s;
+}
+
+.animation-2 ul {
+  transform: translate3d(0,0,0);
+  -webkit-transform: translate3d(0,0,0);
+}
+
+.animation-2 ul li {
+  transition: transform .4s ease-in-out;
+  -webkit-transition: -webkit-transform .4s ease-in-out;
+}
+
+.animation-2 ul li:nth-child(odd) {
+  transform: translate3d(-100%,0,0);
+  -webkit-transform: translate3d(-100%,0,0);
+}
+
+.animation-2 ul li:nth-child(even) {
+  transform: translate3d(100%,0,0);
+  -webkit-transform: translate3d(100%,0,0);
+}
+
+.animation-2 input[type="checkbox"]:checked ~ ul li {
+  transform: translate3d(0,0,0);
+  -webkit-transform: translate3d(0,0,0);
 }
