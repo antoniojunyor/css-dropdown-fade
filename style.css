@@ -145,3 +145,24 @@ input[type="checkbox"]:checked + ul {
   transform: translate3d(0,0,0);
   -webkit-transform: translate3d(0,0,0);
 }
+
+.animation-3 {
+  perspective: 800px;
+  -webkit-perspective: 800px;
+}
+
+.animation-3 ul {
+  transform-origin: top center;
+  -webkit-transform-origin: top center;
+  transform: rotateX(-80deg) translate3d(0,0,0);
+  -webkit-transform: rotateX(-80deg) translate3d(0,0,0);
+  transition: transform .4s ease-in-out, opacity .4s;
+  -webkit-transition: -webkit-transform .4s ease-in-out, opacity .4s;
+}
+
+.animation-3 input[type="checkbox"]:checked + ul {
+  transform: rotateX(0) translate3d(0,0,0);
+  -webkit-transform: rotateX(0) translate3d(0,0,0);
+  transition: transform .4s cubic-bezier(0.03, 0.17, 0.27, 1.55), opacity .4s;
+  -webkit-transition: -webkit-transform .4s cubic-bezier(0.03, 0.17, 0.27, 1.55), opacity .4s;
+}
