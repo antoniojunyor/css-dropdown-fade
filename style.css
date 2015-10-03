@@ -72,17 +72,17 @@ input[type="checkbox"] {
   z-index: 1;
 }
 
-input[type="checkbox"]:checked + ul {
-  opacity: 1;
-  pointer-events: auto;
-}
-
 .dropdown ul {
   position: absolute;
   width: 100%;
   opacity: 0;
   pointer-events: none;
   z-index: 1;
+}
+
+input[type="checkbox"]:checked + ul {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .dropdown ul li { list-style: none; }
@@ -107,16 +107,16 @@ input[type="checkbox"]:checked + ul {
 
 .dropdown + .dropdown { margin-left: 100px; }
 
-.animation-1 input[type="checkbox"]:checked + ul {
-  transform: translate3d(0,0,0);
-  -webkit-transform: translate3d(0,0,0);
+.animation-1 ul {
+  transform: translate3d(0,40px,0);
+  -webkit-transform: translate3d(0,40px,0);
   transition: transform .4s ease-in-out, opacity .4s;
   -webkit-transition: -webkit-transform .4s ease-in-out, opacity .4s;
 }
 
-.animation-1 ul {
-  transform: translate3d(0,40px,0);
-  -webkit-transform: translate3d(0,40px,0);
+.animation-1 input[type="checkbox"]:checked + ul {
+  transform: translate3d(0,0,0);
+  -webkit-transform: translate3d(0,0,0);
   transition: transform .4s ease-in-out, opacity .4s;
   -webkit-transition: -webkit-transform .4s ease-in-out, opacity .4s;
 }
