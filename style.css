@@ -32,6 +32,18 @@ a, a:hover { text-decoration: none; }
   text-align: center;
 }
 
+@media screen and (max-width: 768px) {
+  .container-dropdown {
+    width: 100%;
+    display: block;
+    margin-bottom: 150px;
+  }
+
+  .container-dropdown:first-child { margin-top: 20px; }
+
+  .container-dropdown:last-child { margin-bottom: 0; }
+}
+
 .dropdown {
   display: inline-block;
   position: relative;
@@ -106,8 +118,6 @@ input[type="checkbox"]:checked + ul {
   transition: color .4s ease-in-out, background-color .4s ease-in-out;
 }
 
-.dropdown + .dropdown { margin-left: 100px; }
-
 .animation-1 ul {
   transform: translate3d(0,40px,0);
   -webkit-transform: translate3d(0,40px,0);
@@ -155,8 +165,8 @@ input[type="checkbox"]:checked + ul {
 .animation-3 ul {
   transform-origin: top center;
   -webkit-transform-origin: top center;
-  transform: rotateX(-80deg) translate3d(0,0,0);
-  -webkit-transform: rotateX(-80deg) translate3d(0,0,0);
+  transform: rotateX(-90deg) translate3d(0,0,0);
+  -webkit-transform: rotateX(-90deg) translate3d(0,0,0);
   transition: transform .4s ease-in-out, opacity .4s;
   -webkit-transition: -webkit-transform .4s ease-in-out, opacity .4s;
 }
